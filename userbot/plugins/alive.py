@@ -90,7 +90,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = await event.get_reply_message()
     with open("temp.png", "wb") as f:
-        f.write(requests.get(nekos.cat()).content)
+        f.write(requests.get(nekos.exelon()).content)
     img = Image.open("temp.png")
     img.save("temp.webp", "webp")
     img.seek(0)
