@@ -143,7 +143,7 @@ async def kang(args):
                         pack = 1
                     if not is_anim:
                         packname = f"{user.username}_{pack}"
-                        packnick = f"@{user.username}'s_{pack}"
+                        packnick = f"@{user.username}'s_{pack} @ExelonUserBot"
                     else:
                         packname = f"{user.username}_{pack}_anim"
                         packnick = f"@{user.username}'s_{pack} (Animated)"
@@ -278,12 +278,11 @@ async def kang(args):
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
-        await args.edit(
+       await args.edit(
             f"Sticker başarıyla çalındı\
             \nPaketini [buraya](t.me/addstickers/{packname}) tıklayarak bulabilirsin çıkartma emojin bu {emoji}",
             parse_mode="md",
         )
-
 
 async def resize_photo(photo):
     """ Resize the given photo to 512x512 """
