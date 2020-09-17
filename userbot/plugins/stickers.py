@@ -284,6 +284,7 @@ async def kang(args):
             parse_mode="md",
         )
 
+
 async def resize_photo(photo):
     """ Resize the given photo to 512x512 """
     image = Image.open(photo)
