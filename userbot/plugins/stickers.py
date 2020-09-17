@@ -142,11 +142,11 @@ async def kang(args):
                     except ValueError:
                         pack = 1
                     if not is_anim:
-                        packname = f"{user.username}_{pack}"
+                        packname = f"{user.username}_{pack} @ExelonUserBot"
                         packnick = f"@{user.username}'s_{pack} @ExelonUserBot"
                     else:
-                        packname = f"{user.username}_{pack}_anim"
-                        packnick = f"@{user.username}'s_{pack} (Animated)"
+                        packname = f"{user.username}_{pack}_anim @ExelonUserBot"
+                        packnick = f"@{user.username}'s_{pack} @ExelonUserBot (Animated)"
                     await args.edit(
                         "`Switching to Pack "
                         + str(pack)
@@ -232,7 +232,7 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
         else:
-            await args.edit("`Brewing a new Pack...`")
+            await args.edit("`Yeni Paket Oluşturuluyor...`")
             async with bot.conversation("Stickers") as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
@@ -278,7 +278,7 @@ async def kang(args):
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
-       await args.edit(
+        await args.edit(
             f"Sticker başarıyla çalındı\
             \nPaketini [buraya](t.me/addstickers/{packname}) tıklayarak bulabilirsin çıkartma emojin bu {emoji}",
             parse_mode="md",
